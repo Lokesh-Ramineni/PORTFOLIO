@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Ramineni</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <%- include("partial/header.ejs"); %>
+    <h2 style="margin-left: 50px; opacity: 0.8;"> <span style="color: black;"> My</span> Education</h2>
+    <section class="education">
+        <% education.forEach(item => { %>
+            <div class="timeline-item">
+            <div class="timeline-icon">🎓</div>
+
+            <div class="timeline-card">
+                <div class="meta">
+                <span>📅 <%= item.year %></span>
+                <span>📍 <%= item.location %></span>
+                </div>
+
+                <h3><%= item.title %></h3>
+                <h4><%= item.institute %></h4>
+
+                <p><%- item.description.replace(/\n/g, "<br>") %></p>
+            </div>
+            </div>
+        <% }) %>
+
+    </section>
+
+    <%- include("partial/footer.ejs"); %>
+</body>
+</html>

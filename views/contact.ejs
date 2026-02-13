@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+    
+</head>
+<body>
+    <%- include("partial/header.ejs"); %>
+    <div class="container">
+        <div class="contact_container" > 
+            <div class="contact_info">
+                <div>
+                    <h2>Contact Information</h2>
+                </div>
+                <div class="email" style="display: flex; align-items: center; gap: 10px; margin-top: 20px;">
+                    <div class="info">
+                            <i style="margin: 5px;"class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div>
+                            <p style="margin: 0 0 5px 0; opacity: 0.8;">Email</p>
+                            <a href="mailto:lokesh.ramineni1@gmail.com" style="text-decoration: none; color:black">lokesh.ramineni1@gmail.com</a>
+                    </div>
+                </div>
+                <div class="phone" style="display: flex; align-items: center; gap: 10px; margin-top: 20px;"    >
+                    <div class="info">
+                            <i style="margin: 5px;" class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                            <p style="margin: 0 0 5px 0; opacity: 0.8;">Phone</p>
+                            <a href="tel:+919999999999" style="text-decoration: none; color:black">+91-9999999999</a>
+                    </div>
+                    </div>
+                <div class="location" style="display: flex; align-items: center; gap: 10px; margin-top: 20px;"    >
+                    <div class="info">
+                            <i style="margin: 5px;" class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                            <p style="margin: 0 0 5px 0; opacity: 0.8;">Amaravathi, Andhra Pradesh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="below">
+                <div class="info" >
+                    <i class="fa-solid fa-location-arrow"></i>
+                </div>
+                <div>
+                    <h2>Get in Touch</h2>
+                    <p style="margin-top: 10px; opacity: 0.8;"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project">
+            <form action="/contact" method="post">
+                <div class="details" >
+                    <div>
+                        <label for="name">Name</label><br>
+                        <input style="width: 100%;" type="text" id="name" name="name"  placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input style="width: 100%;"type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="subject" >
+                    <label for="subject">Subject</label><br>
+                    <input style="width: 100%;" type="text" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="message" >
+                    <label for="message">Message</label><br>
+                    <textarea style="width: 97%;"  id="message" name="message" rows="10" placeholder="Your Message" required></textarea>
+                </div>
+                <button  >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div> 
+    <%- include("partial/footer.ejs"); %>
+</body>
+</html>

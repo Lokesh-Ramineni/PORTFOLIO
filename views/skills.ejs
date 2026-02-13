@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Ramineni</title>
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+    <%- include("partial/header.ejs"); %>
+    <h2 class="h2_skills">My Technical Skills</h2>
+    <% for(let i=0;i<4;i++) { %> 
+        <div class ="skills_container">
+        <div style="flex-basis: 100%; margin-left: 0.5rem;">
+            <h3><%= headings[i] %></h3>
+        </div>
+            <% technical_skills[i].forEach(tech => { %>
+                <div class="tech_stack" style="display: inline-block; text-align: center; margin: 10px;">
+                    <img src="<%=tech.img_src %>" alt="<%=tech.name %>" style="width:100px; height:100px;">
+                    <p><%=tech.name %></p>
+                </div>
+            <% }); %>
+        </div>
+    <% };%>
+    <%- include("partial/footer.ejs"); %>
+</body>
+</html>

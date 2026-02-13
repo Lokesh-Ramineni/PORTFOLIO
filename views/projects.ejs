@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Ramineni</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <%- include("partial/header.ejs"); %>
+    <h2 style="margin-left: 50px; opacity: 0.8;"> <span style="color: black;"> My</span> Projects</h2>
+    <div class="projects_container" >
+        <% for(let i=0;i<projects.length;i++) { %>
+            <div class="project_card">
+                <div class="img" ><img src="<%= projects[i].img_src %>" alt="image"></div>
+                <p style="opacity: 0.8; " > <%= projects[i].type %> </p>
+                <h3 style="font-weight: 700;" ><%= projects[i].title%></h3>
+                <p style="opacity: 0.8;"><%= projects[i].description %></p>
+                <div>
+                    <% for(let j=0;j<projects[i].tech_stack.length;j++) { %>
+                        <span class="tech_stack"><%= projects[i].tech_stack[j] %></span>
+                    <% } %>
+                </div>
+            </div>
+        <% }; %>
+    </div>
+    <%- include("partial/footer.ejs"); %>
+</body>
+</html>
