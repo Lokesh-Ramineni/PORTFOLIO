@@ -42,7 +42,7 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
-    margin: auto;
+    margin-left: 3rem;
 
 }
 .below_footer{
@@ -114,6 +114,11 @@ header a {
     width: 300px;
     background-color: #F3EFE6;
     border-radius: 50%;
+}
+.right{
+    font-size: 1.2rem;
+    color:#2F7F7A;
+    font-weight: 500;
 }
 .hamburger{
     display: none;

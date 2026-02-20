@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require('express');
+const { link } = require("fs");
 const path=require('path');
 const app=express();
 const port = 3000;
@@ -55,13 +56,13 @@ headings = ["Frontend Technologies", "Backend Technologies","Databases","Version
 
 projects = [
     {
-        img_src:"grades.png",type:"Web Application",title:"Project One",description:"This is the description for project one.",tech_stack:["HTML","CSS","JavaScript"]
+        type:"WEB Application",title:"Lost and Found Portal",description:"A web application to help users report lost items and find found items.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","MongoDB"],livelink:""
     },
     {
-        img_src:"project2.png",type:"Mobile Application",title:"Project Two",description:"This is the description for project two.",tech_stack:["React Native","Node.js"]
+        type:"WEB Application",title:"Portfolio Website",description:"A responsive portfolio website showcasing projects, skills, and contact information.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","EJS"] ,livelink:"https://lokesh-ramineni.vercel.app/"
     },
     {
-        img_src:"project3.png",type:"Desktop Application",title:"Project Three",description:"This is the description for project three.",tech_stack:["Electron","JavaScript"]
+        type:"WEB Application",title:"Gade Calculator",description:"A desktop application for performing grade calculations.",tech_stack:["HTML","CSS","JavaScript"],livelink:"https://student-gradecalc.vercel.app/"
     }
 ]
 education=[
