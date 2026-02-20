@@ -1,5 +1,4 @@
 .skills_container{
-    height: 250px;
     background-color: #F3EFE6;
     display: flex;
     flex-wrap: wrap;
@@ -7,11 +6,13 @@
     align-items: center;
     margin:20px 150px;
     border-radius: 20px;
-    padding: 0.5rem;
+    padding: 2rem;
 }
+
 .h2_skills{
     margin: 20px 150px;
 }
+
 @media (max-width: 768px) {
     .skills_container{
         margin:1rem;

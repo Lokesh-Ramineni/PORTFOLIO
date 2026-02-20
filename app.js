@@ -1,10 +1,18 @@
+require("dotenv").config();
 const express = require('express');
+const path=require('path');
 const app=express();
 const port = 3000;
 
 app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+require("./nodemailer")(app);
+
 app.use(express.static('public'));
+
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine","ejs");
+
 app.get("/",(req,res) =>{
     res.render("home");
 })
@@ -21,11 +29,7 @@ app.get("/about",(req,res) => {
 app.get("/contact",(req,res) => {
     res.render("contact");
 });
-app.post("/contact",(req,res) => {
-    let {name,email,subject,message}=req.body;
-    console.log(name+email);
-    res.redirect("/contact")
-});
+
 technical_skills=[
     [
         {name:"HTML",img_src:"https://cdn-icons-png.flaticon.com/512/732/732212.png"},
@@ -70,6 +74,7 @@ education=[
         year:"2021 - 2022",location:"Andhra Pradesh",title:"Secondary School Education",institute:"Narayana Techno School, Nellore",description:"Completed Class X (2021 - 2022) at Narayana Techno School with a focus on Science and Mathematics.\nPercentage: 96%"
     }
 ]
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
