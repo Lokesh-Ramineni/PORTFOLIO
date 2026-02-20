@@ -56,7 +56,7 @@ headings = ["Frontend Technologies", "Backend Technologies","Databases","Version
 
 projects = [
     {
-        type:"WEB Application",title:"Lost and Found Portal",description:"A web application to help users report lost items and find found items.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","MongoDB"],livelink:""
+        type:"WEB Application",title:"Lost and Found Portal (Ongoing)",description:"A web application to help users report lost items and find found items.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","MongoDB"],livelink:""
     },
     {
         type:"WEB Application",title:"Portfolio Website",description:"A responsive portfolio website showcasing projects, skills, and contact information.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","EJS"] ,livelink:"https://lokesh-ramineni.vercel.app/"

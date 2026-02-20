@@ -19,6 +19,7 @@ body{
   max-width: 1200px;
   margin: 2rem auto 0 auto;
   align-items: start;
+  margin-bottom: 2rem;
 }
 .contact_container {
   display: flex;
@@ -37,6 +38,10 @@ body{
 }
 .below{
   height: 60px;
+  display: flex;
+}
+.below div{
+  margin-right: 1rem;
 }
 .info{
     height: 40px;
@@ -81,11 +86,17 @@ body{
  }
 button{
   background-color: #F2B544;
-  height:30px;
+  height:45px;
+  cursor: pointer;
   width: 100%;
   text-align: center;
   color: azure;
-  font-weight: 600;
+  font-weight: 800;
+  font-size: large;
   border-radius: 10px;
   border:none;
+}
+.ADJUST i{
+    margin-top: 8px;
+    margin-left: 5px;
 }

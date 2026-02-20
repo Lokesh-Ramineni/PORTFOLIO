@@ -171,3 +171,9 @@ header a {
         text-decoration: none;
     }
 }
+@media (max-width:1290px){
+        .footer{
+        margin-left: 0;
+    }
+    
+}

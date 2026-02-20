@@ -44,8 +44,10 @@ div a{
     text-decoration: none;
     
 }
-.links{
-    margin-top: 1rem;
+.livelinks{
+        margin-top: 2rem;
+}
+.livelinks a{
     color: #2F7F7A;
 }
 
