@@ -43,6 +43,8 @@ footer{
     justify-content: space-between;
     max-width: 1200px;
     margin-left: 3rem;
+    /* margin: 0 auto; */
+
 
 }
 .below_footer{
@@ -172,8 +174,12 @@ header a {
     }
 }
 @media (max-width:1290px){
-        .footer{
+    .footer{
         margin-left: 0;
     }
+    footer{
+        align-self: stretch; 
+    }
+
     
 }
