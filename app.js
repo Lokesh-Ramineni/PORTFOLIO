@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-require("./nodemailer")(app);
+// require("./nodemailer")(app);
 
 app.use(express.static('public'));
 
