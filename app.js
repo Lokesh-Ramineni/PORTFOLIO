@@ -1,6 +1,6 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require('express');
-const { link } = require("fs");
+// const { link } = require("fs");
 const path=require('path');
 const app=express();
 const port = 3000;
@@ -27,9 +27,9 @@ app.get("/skills",(req,res) => {
 app.get("/about",(req,res) => {
     res.render("about");
 });
-app.get("/contact",(req,res) => {
-    res.render("contact");
-});
+// app.get("/contact",(req,res) => {
+//     res.render("contact");
+// });
 
 technical_skills=[
     [
@@ -76,6 +76,6 @@ education=[
     }
 ]
 
-app.listen(port, () => {
+app.listen(port ,() => {
     console.log(`Server is running on http://localhost:${port}`);
 });
