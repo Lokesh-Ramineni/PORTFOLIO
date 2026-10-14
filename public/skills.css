@@ -1,5 +1,6 @@
 .skills_container{
-    background-color: #F3EFE6;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

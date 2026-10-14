@@ -11,10 +11,10 @@
 .project_card {
     height: auto;
     width: 90%;
-    background-color: #F3EFE6;
+    background-color: var(--surface);
     border-radius: 15px;
     padding: 15px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .img img {
@@ -28,17 +28,17 @@
 }
 .project_card span{
     display: inline-block;
-    background-color: rgba(47, 127, 122, 0.1);
-    color:#2F7F7A;
+    background-color: var(--accent-soft);
+    color:var(--accent);
     padding: 5px 10px;
     border-radius: 12px;
     margin: 5px 5px 0 0;
     font-size: 0.8rem;
-    border: 1px solid #2F7F7A;
+    border: 1px solid var(--accent);
 }
 .project_card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
 }
 div a{
     text-decoration: none;
@@ -48,6 +48,6 @@ div a{
         margin-top: 2rem;
 }
 .livelinks a{
-    color: #2F7F7A;
+    color: var(--accent);
 }
 

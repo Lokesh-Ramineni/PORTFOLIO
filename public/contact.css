@@ -4,7 +4,8 @@ html,body{
 body{
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #FBF8F1;
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -30,11 +31,12 @@ body{
   padding: 20px;
   width: 400px;
   height: 240px;
-  background-color: #F3EFE6;
+  background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
   margin-top: 20px;
-  background-color: #F3EFE6;
+  background-color: var(--surface);
 }
 .below{
   height: 60px;
@@ -47,15 +49,17 @@ body{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color:#F2B544;
+    background-color: var(--amber);
+    color: var(--on-amber);
     font-size: 24px;
 }
 .project{
   width: 400px;
   padding: 20px;
-  background-color: #F3EFE6;
+  background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 .project label, input::placeholder, textarea::placeholder{
   opacity: 0.8;
@@ -63,17 +67,23 @@ body{
 .project input{
   height: 2rem;
   margin-top: 0.5rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--border);
+  color: var(--text);
   padding-left: 0.3rem;
   border-radius: 10px;
-  background-color: #F3EFE6;
+  background-color: var(--surface-2);
 }
 .project textarea{
   margin-top: 0.5rem;
   padding: 0.5rem;
   border-radius: 10px;
-  border: 2px solid #ccc;
-  background-color: #F3EFE6;
+  border: 2px solid var(--border);
+  color: var(--text);
+  background-color: var(--surface-2);
+}
+.project input:focus,.project textarea:focus{
+  outline: none;
+  border-color: var(--accent);
 }
 .details{
   display: flex;
@@ -85,12 +95,12 @@ body{
   margin-bottom: 1rem;
  }
 button{
-  background-color: #F2B544;
+  background-color: var(--amber);
   height:45px;
   cursor: pointer;
   width: 100%;
   text-align: center;
-  color: azure;
+  color: var(--on-amber);
   font-weight: 800;
   font-size: large;
   border-radius: 10px;
