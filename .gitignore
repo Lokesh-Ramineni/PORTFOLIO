@@ -1,2 +1,8 @@
+#Node modules
 node_modules/
+
+#Keys
 .env
+
+#mailer
+nodemailer.js
