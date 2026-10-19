@@ -1,4 +1,5 @@
 // require("dotenv").config();
+const { name } = require('ejs');
 const express = require('express');
 // const { link } = require("fs");
 const path=require('path');
@@ -33,6 +34,11 @@ app.get("/contact",(req,res) => {
 
 technical_skills=[
     [
+        {name: "Java",img_src:"https://img.icons8.com/plasticine/100/java-coffee-cup-logo.png"},
+        {name: "Python",img_src:"https://img.icons8.com/ios-filled/50/python.png"},
+        {name: "Go",img_src:"https://img.icons8.com/color/96/golang.png"}
+    ],
+    [
         {name:"HTML",img_src:"https://cdn-icons-png.flaticon.com/512/732/732212.png"},
         {name:"CSS",img_src:"https://cdn-icons-png.flaticon.com/512/732/732190.png"},
         {name:"JavaScript",img_src:"https://cdn-icons-png.flaticon.com/512/5968/5968292.png"},
@@ -44,19 +50,47 @@ technical_skills=[
 
     ],
     [
-        {name:"MongoDB",img_src:"mongo1.png"},   
-        {name:"MySQL",img_src:"mysql.png"},
+        {name:"Playwright",img_src:"Playwrite.png"}
     ],
     [
-        {name:"Git",img_src:"git.png"},
-        {name:"GitHub",img_src:"github.png"},
+        {name:"MongoDB",img_src:"mongo1.png"},          
+        {name:"MySQL",img_src:"https://img.icons8.com/fluency/96/mysql-logo.png"},
+    ],
+    [
+        {name:"Git",img_src:"https://img.icons8.com/color/96/git.png"},
+        {name:"GitHub",img_src:"https://img.icons8.com/material-sharp/96/github.png"},
     ]
 ]
-headings = ["Frontend Technologies", "Backend Technologies","Databases","Version Control"];
+headings = ["Programming Languages","Frontend Technologies", "Backend Technologies","Browser Automation","Databases","Version Control"];
 
 projects = [
     {
-        type:"WEB Application",title:"Lost and Found Portal (Ongoing)",description:"A web application to help users report lost items and find found items.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","MongoDB"],livelink:""
+        type: "WEB Application",
+        title: "The Crores Club",
+        description: "A real-time multiplayer IPL auction simulator where users create rooms, compete through live bidding, manage virtual budgets, and build cricket squads with synchronized auction updates.",
+        tech_stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth"],
+        livelink: "https://the-crores-club.vercel.app"
+    },
+    {
+        type: "Automation Tool",
+        title: "Lightweight VTOP Pilot",
+        description: "An asynchronous, browserless VTOP automation client that retrieves attendance, timetables, marks, grades, exam schedules, and other academic data using HTTP requests and locally processed CAPTCHAs.",
+        tech_stack: ["Python", "HTTPX", "AsyncIO", "NumPy", "BeautifulSoup", "IMAP","CAPTCHA Solving    "],
+        livelink: "https://github.com/Lokesh-Ramineni/lightweight-vtop-pilot"
+    },
+    {
+        type: "Automation Tool",
+        title: "VTOP Pilot",
+        description: "A Python automation tool for the VIT-AP VTOP portal that streamlines login sessions, automates faculty feedback submissions, and simplifies hostel outing requests.",
+        tech_stack: ["Python","Playwright", "Browser Automation", "CAPTCHA Solving", "OTP Authentication"],
+        livelink: "https://github.com/Lokesh-Ramineni/vtop-pilot"
+    },
+    {
+        type: "Python Utility",
+        title: "Sheet to Calendar",
+        description: "A Python utility that converts VIT-AP food menus into structured JSON and CSV data for easy calendar integration.",
+        tech_stack: ["Python", "JSON", "CSV", "iCalendar"],
+        livelink: "https://github.com/Lokesh-Ramineni/sheet-to-calendar"
     },
     {
         type:"WEB Application",title:"Portfolio Website",description:"A responsive portfolio website showcasing projects, skills, and contact information.",tech_stack:["HTML","CSS","JavaScript","Node.js","Express.js","EJS"] ,livelink:"https://lokesh-ramineni.vercel.app/"
