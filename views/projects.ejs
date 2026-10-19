@@ -21,7 +21,16 @@
                     <% } %>
                 </div>
                 <div class="livelinks">
-                    <a href="<%= projects[i].livelink %>" class="project_link">View Project</a>
+                    <% if (projects[i].livelink) { %>
+                        <a
+                            href="<%= projects[i].livelink %>"
+                            class="project_link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Project
+                        </a>
+                    <% } %>
                 </div>
             </div>
         <% }; %>
