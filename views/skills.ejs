@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokesh Ramineni</title>
-    <link rel="stylesheet" href="skills.css">
+    <%- include("partial/head", { title: "Skills", css: "skills.css" }); %>
 </head>
 <body>
-    <%- include("partial/header.ejs"); %>
-    <h2 class="h2_skills">My Technical Skills</h2>
-    <div class="spaces">
-        <% for(let i=0;i<technical_skills.length;i++) { %> 
-            <div class ="skills_container">
-            <div style="flex-basis: 100%; margin-left: 0.5rem;">
-                <h3><%= headings[i] %></h3>
-            </div>
-                <% technical_skills[i].forEach(tech => { %>
-                    <div class="tech_stack" style="display: inline-block; text-align: center; margin: 10px;">
-                        <img src="<%=tech.img_src %>" alt="<%=tech.name %>" style="width:100px; height:100px;">
-                        <p><%=tech.name %></p>
+    <%- include("partial/header"); %>
+
+    <main class="page">
+        <p class="section-tag">// skills</p>
+        <h2 class="section-title"><span class="plain">My</span> Technical Skills</h2>
+
+        <div class="spaces">
+            <% for (let i = 0; i < technical_skills.length; i++) { %>
+                <div class="skills_container spot">
+                    <h3 class="skills_heading"><%= headings[i] %></h3>
+                    <div class="skills_row">
+                        <% technical_skills[i].forEach(tech => { %>
+                            <div class="tech_stack">
+                                <img src="<%= tech.img_src %>" alt="<%= tech.name %>" loading="lazy">
+                                <p><%= tech.name %></p>
+                            </div>
+                        <% }); %>
                     </div>
-                <% }); %>
-            </div>
-        <% };%>
-    </div>
-    <%- include("partial/footer.ejs"); %>
+                </div>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include("partial/footer"); %>
 </body>
 </html>

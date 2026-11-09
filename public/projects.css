@@ -1,229 +1,80 @@
-/* Projects Layout */
-.projects_container {
+.projects_container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 24px;
-    padding: 30px 6%;
-    margin: 35px auto 70px;
-    max-width: 1600px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+    gap: 1.5rem;
     align-items: stretch;
 }
 
-/* Project Card */
-.project_card {
-    position: relative;
+.project_card{
     display: flex;
     flex-direction: column;
     min-width: 0;
-    height: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-
-    background:
-        linear-gradient(145deg, var(--surface), rgba(20, 25, 30, 0.96));
-
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 26px;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    padding: 1.7rem;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-
-/* Accent strip */
-.project_card::before {
+.project_card::before{                 /* neon top edge */
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-
-    background: linear-gradient(
-        90deg,
-        var(--accent),
-        transparent 85%
-    );
-
-    opacity: 0.65;
-    transition: opacity 0.3s ease;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--grad);
+    opacity: .55;
+    transition: opacity .3s ease;
 }
-
-/* Hover effect */
-.project_card:hover {
-    transform: translateY(-7px);
-    border-color: var(--accent);
-
-    box-shadow:
-        0 14px 35px rgba(0, 0, 0, 0.22),
-        0 0 18px rgba(45, 190, 170, 0.08);
+.project_card:hover{
+    transform: translateY(-8px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(34,211,238,0.12);
 }
+.project_card:hover::before{ opacity: 1; }
 
-.project_card:hover::before {
-    opacity: 1;
-}
-
-/* Project type */
-.project_card > p:first-child {
-    color: var(--accent);
-    font-size: 0.78rem;
+.project_type{
+    margin: 0 0 .9rem;
+    font-family: var(--mono);
+    font-size: .72rem;
     font-weight: 700;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
-    margin: 4px 0 14px;
+    color: var(--cyan);
 }
-
-/* Project title */
-.project_card h3 {
-    color: var(--text);
-    font-size: 1.3rem;
-    line-height: 1.4;
-    margin: 0 0 14px;
+.project_title{
+    margin: 0 0 .8rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    transition: color 0.25s ease;
+    line-height: 1.3;
+    transition: color .25s ease;
 }
-
-.project_card:hover h3 {
-    color: var(--accent);
-}
-
-/* Project description */
-.project_card > p:nth-child(3) {
-    color: var(--text);
-    opacity: 0.76;
-    font-size: 0.96rem;
+.project_card:hover .project_title{ color: var(--cyan); }
+.project_desc{
+    margin: 0 0 1.3rem;
+    color: var(--text-muted);
+    font-size: .95rem;
     line-height: 1.75;
-    margin: 0 0 20px;
     overflow-wrap: anywhere;
 }
 
-/* Tech stack container */
-.project_card > div:not(.livelinks) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-/* Technology badges */
-.project_card .tech_stack {
-    display: inline-flex;
-    align-items: center;
-
+.project_tags{ display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag{
+    padding: .3rem .65rem;
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--cyan);
     background: var(--accent-soft);
-    color: var(--accent);
-
-    border: 1px solid rgba(45, 190, 170, 0.28);
+    border: 1px solid rgba(34,211,238,0.25);
     border-radius: 8px;
-
-    padding: 6px 10px;
-    margin: 0;
-
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.15px;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease;
+    transition: border-color .25s ease, background .25s ease;
 }
+.tag:hover{ border-color: var(--cyan); background: rgba(34,211,238,0.2); }
 
-.project_card:hover .tech_stack {
-    border-color: rgba(45, 190, 170, 0.45);
-}
-
-.project_card .tech_stack:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-
-/* Project links */
-.livelinks {
-    margin-top: auto;
-    padding-top: 26px;
-}
-
-.livelinks a {
+.livelinks{ margin-top: auto; padding-top: 1.6rem; }
+.livelinks a{
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-
-    color: var(--accent);
-    font-size: 0.95rem;
+    gap: .6rem;
     font-weight: 600;
-    text-decoration: none;
-
-    transition: gap 0.25s ease, opacity 0.25s ease;
+    font-size: .95rem;
+    color: var(--cyan);
+    transition: gap .25s ease, color .25s ease;
 }
-
-.livelinks a::after {
-    content: "↗";
-    font-size: 1.1rem;
-}
-
-.livelinks a:hover {
-    gap: 14px;
-}
-
-/* Existing project images, if used */
-.project_card .img img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.project_card img {
-    cursor: zoom-in;
-}
-
-/* Tablet and mobile */
-@media (max-width: 768px) {
-    .projects_container {
-        grid-template-columns: repeat(
-            auto-fit,
-            minmax(min(100%, 280px), 1fr)
-        );
-        gap: 18px;
-        padding: 24px 5%;
-        margin-top: 25px;
-    }
-
-    .project_card {
-        padding: 22px;
-    }
-}
-
-@media (max-width: 480px) {
-    .projects_container {
-        grid-template-columns: 1fr;
-        padding: 20px 5%;
-        gap: 16px;
-    }
-
-    .project_card {
-        padding: 20px;
-        border-radius: 14px;
-    }
-
-    .project_card h3 {
-        font-size: 1.18rem;
-    }
-
-    .project_card > p:nth-child(3) {
-        font-size: 0.92rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .project_card,
-    .project_card *,
-    .project_card::before {
-        transition: none !important;
-    }
-
-    .project_card:hover {
-        transform: none;
-    }
-}
+.livelinks a::after{ content: "↗"; font-size: 1.1rem; }
+.livelinks a:hover{ gap: 1rem; color: var(--pink); }
