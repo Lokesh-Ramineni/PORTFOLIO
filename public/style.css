@@ -568,3 +568,15 @@ html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after{
     *, *::before, *::after{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     .reveal{ opacity: 1; transform: none; }
 }
+/* ---------- phones & tablets: no hero motion (stops the zoom in/out effect) ---------- */
+html{ overflow-x: clip; }
+
+@media (max-width: 900px), (hover: none){
+    .hero-text > *{ animation: none; }
+    .hero-visual{ perspective: none; }
+    .visual-frame{ transform: none; transition: none; }
+    .orb{ animation: none; filter: none; }
+    .ring{ animation: none; }
+    .hero-img{ animation: none; transform: none; }
+    body::before{ animation: none; transform: none; }
+}
