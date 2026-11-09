@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokesh Ramineni</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <%- include("partial/head", { title: "Home" }); %>
 </head>
 <body>
-    <%- include("partial/header.ejs"); %>
-    <main>
-        <div class="main">
-            <div class="left" >
-                <h3>Hi! I'm</h3>
-                <h2>
-                    Lokesh Ramineni
-                </h2>
+    <%- include("partial/header"); %>
+
+    <main class="hero">
+        <section class="hero-text">
+            <p class="eyebrow">Hi! I'm</p>
+            <h1 class="hero-name"><span class="grad">Lokesh Ramineni</span></h1>
+            <p class="hero-role">( <span data-typed="full_stack_developer|node_js_express_mongodb|python_automation">full_stack_developer</span><span class="caret"></span> )</p>
+            <p class="hero-desc">
+                Full Stack Developer specializing in building responsive web applications using Node.js, Express, and MongoDB.
+            </p>
+
+            <div class="hero-cta">
+                <a class="btn" href="/projects">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a class="btn btn-ghost" href="/LOKESH_RESUME.pdf" download><i class="fa-solid fa-download"></i> Resume</a>
             </div>
-            <div class="middle">
-                <!-- <img src="pic.png" alt="pic"> -->
+
+            <div class="socials">
+                <a href="https://github.com/Lokesh-Ramineni/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/lokesh-ramineni-43bbb43a4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:lokesh.ramineni1@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
             </div>
-            <div class="right" >
-                Full Stack Developer specializing in building <br> responsive web applications using Node.js, Express, and MongoDB.
+        </section>
+
+        <section class="hero-visual" aria-hidden="true">
+            <div class="visual-frame">
+                <div class="orb"></div>
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <img class="hero-img" src="/developer.png" alt="">
             </div>
-        </div>
+        </section>
     </main>
-    <%- include("partial/footer.ejs"); %>
-    
+
+    <%- include("partial/footer"); %>
 </body>
 </html>

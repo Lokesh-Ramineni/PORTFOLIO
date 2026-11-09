@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokesh Ramineni</title>
-    <link rel="stylesheet" href="projects.css">
+    <%- include("partial/head", { title: "Projects", css: "projects.css" }); %>
 </head>
 <body>
-    <%- include("partial/header.ejs"); %>
-    <h2 style="margin-left: 50px; opacity: 0.8;"> <span style="color: var(--text);"> My</span> Projects</h2>
-    <div class="projects_container" >
-        <% for(let i=0;i<projects.length;i++) { %>
-            <div class="project_card">
-                <p style="opacity: 0.8; " > <%= projects[i].type %> </p>
-                <h3 style="font-weight: 700;" ><%= projects[i].title%></h3>
-                <p style="opacity: 0.8;"><%= projects[i].description %></p>
-                <div>
-                    <% for(let j=0;j<projects[i].tech_stack.length;j++) { %>
-                        <span class="tech_stack"><%= projects[i].tech_stack[j] %></span>
-                    <% } %>
-                </div>
-                <div class="livelinks">
-                    <% if (projects[i].livelink) { %>
-                        <a
-                            href="<%= projects[i].livelink %>"
-                            class="project_link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View Project
-                        </a>
-                    <% } %>
-                </div>
-            </div>
-        <% }; %>
-    </div>
-    <%- include("partial/footer.ejs"); %>
+    <%- include("partial/header"); %>
+
+    <main class="page">
+        <p class="section-tag">// projects</p>
+        <h2 class="section-title"><span class="plain">My</span> Projects</h2>
+
+        <div class="projects_container">
+            <% for (let i = 0; i < projects.length; i++) { %>
+                <article class="project_card spot">
+                    <p class="project_type"><%= projects[i].type %></p>
+                    <h3 class="project_title"><%= projects[i].title %></h3>
+                    <p class="project_desc"><%= projects[i].description %></p>
+                    <div class="project_tags">
+                        <% for (let j = 0; j < projects[i].tech_stack.length; j++) { %>
+                            <span class="tag"><%= projects[i].tech_stack[j].trim() %></span>
+                        <% } %>
+                    </div>
+                    <div class="livelinks">
+                        <% if (projects[i].livelink) { %>
+                            <a href="<%= projects[i].livelink %>" class="project_link" target="_blank" rel="noopener noreferrer">View Project</a>
+                        <% } %>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include("partial/footer"); %>
 </body>
 </html>
