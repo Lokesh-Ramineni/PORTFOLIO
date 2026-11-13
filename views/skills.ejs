@@ -7,12 +7,11 @@
     <%- include("partial/header"); %>
 
     <main class="page">
-        <p class="section-tag">// skills</p>
         <h2 class="section-title"><span class="plain">My</span> Technical Skills</h2>
 
         <div class="spaces">
             <% for (let i = 0; i < technical_skills.length; i++) { %>
-                <div class="skills_container spot">
+                <div class="skills_container card">
                     <h3 class="skills_heading"><%= headings[i] %></h3>
                     <div class="skills_row">
                         <% technical_skills[i].forEach(tech => { %>

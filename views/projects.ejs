@@ -7,12 +7,11 @@
     <%- include("partial/header"); %>
 
     <main class="page">
-        <p class="section-tag">// projects</p>
         <h2 class="section-title"><span class="plain">My</span> Projects</h2>
 
         <div class="projects_container">
             <% for (let i = 0; i < projects.length; i++) { %>
-                <article class="project_card spot">
+                <article class="project_card card">
                     <p class="project_type"><%= projects[i].type %></p>
                     <h3 class="project_title"><%= projects[i].title %></h3>
                     <p class="project_desc"><%= projects[i].description %></p>
